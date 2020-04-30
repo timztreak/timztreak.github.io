@@ -158,14 +158,14 @@ function iterateApp() {
 			break;
     }
 }
-
+//Bullet Collision 
 //==========================================================================
 // Funktion som kan utföra alla förflyttningar i spelet.
 //==========================================================================
 function update() {
-      
-
 	//******************* BEGIN Starship game ******************************
+	NotP2BulletCollided();
+	NotP1BulletCollided();
 	NotP1.update();
 	NotP2.update();
 	//******************* END Starship game ********************************
@@ -177,6 +177,29 @@ function update() {
 
 	return 0;
 }
+function NotP2BulletCollided(){
+	for(let i = 0; i < NotP1.laserPool.length; i++) {
+		if(NotP1.laserPool[i].x >= NotP2.x && NotP1.laserPool[i].x <= NotP2.x + 
+			10 && NotP1.laserPool[i].y >= NotP2.y && NotP1.laserPool[i].y <= 
+			NotP2.y + 10)
+		{ 
+		 alert("Player 2 died, Press Ctrl + R to restart");
+	
+		}
+	}
+	}
+	function NotP1BulletCollided(){
+		for(let i = 0; i < NotP2.laserPool.length; i++) {
+			if(NotP2.laserPool[i].x >= NotP1.x && NotP2.laserPool[i].x <= NotP1.x + 
+				20 && NotP2.laserPool[i].y >= NotP1.y && NotP2.laserPool[i].y <= 
+				NotP1.y + 20)
+			{ 
+			 alert("Player 1 died, Press Ctrl + R to restart");
+		
+			}
+		}
+		}
+
 //==========================================================================
 // Ritar (renderar) bakgrund och alla objekt som ska visas i spelet
 // Param ctx: kontexten för och referensen till den canvas som ska renderas
@@ -199,8 +222,7 @@ function draw(ctx) {
 	NotP1.draw(ctx);
 	NotP2.draw(ctx);
 	WallCollision(ctx);
-	P1BulletCollision(ctx);
-	P2BulletCollision(ctx);
+	
 	//******************* END Starship game ********************************
 	
 	//######################################################################
@@ -208,8 +230,7 @@ function draw(ctx) {
 	//#      eller genom anrop till andra funktioner eller metoder i objekt.
 	//######################################################################
 }
-	//Väggar 
-
+	//Väggar
 	class Wall{
 		constructor(x, y, w, h, c){
 			this.x = x;
@@ -244,30 +265,3 @@ function draw(ctx) {
 		Wall3.draw(ctx);
 	  }
 	  
-	function P1BulletCollision(ctx){
-		for (var b=0;b<LaserShot.length;b++){
-			ctx.beginPath();
-			ctx.arc(LaserShot[b].x,bullets[b].y,2,0,Math.PI*2);
-			ctx.fill();     
-			bullets[b].x += bullets[b].dx;
-			for (var j=NotP1.length; j-- >0;) {
-				if(bullets[b].x>NotP1[j].x && bullets[b].x<NotP1[j].x+NotP1[j].width && bullets[b].y>NotP1[j].y && bullets[b].y<NotP1[j].y+NotP1[j].height){
-					NotP1.splice(j,1);
-				}  
-			}
-		}
-	}
-	function P2BulletCollision(ctx){
-		for (var b=0;b<bullets.length;b++){
-			ctx.beginPath();
-			ctx.arc(bullets[b].x,bullets[b].y,2,0,Math.PI*2);
-			ctx.fill();     
-			bullets[b].x += bullets[b].dx;
-			for (var j=NotP2.length; j-- >0;) {
-				if(bullets[b].x>NotP2[j].x && NotP2[b].x<NotP2[j].x+NotP2[j].width && bullets[b].y>NotP2[j].y && bullets[b].y<NotP2[j].y+NotP2[j].height){
-					NotP2.splice(j,1);
-				}  
-			}
-		}
-	}
-

@@ -25,6 +25,7 @@ class Player1
 		{
 			this.laserPool.push(new LaserShot(50, 2, 5));
 		}
+		
 	}
 
 	//==========================================================================
@@ -65,7 +66,7 @@ class Player1
 				}
 			}
 			var laserSkot = new Audio("laserskot.mp3");
-			laserSkot.src = "laserskot.mp3#t0.5, 2.5";
+			laserSkot.src = "laserskot.mp3#t0.2, 0.5";
 			laserSkot.play();
 		}
 		
@@ -88,6 +89,7 @@ class Player1
 		ctx.closePath();
 		ctx.fillStyle = "#700000";
 		ctx.fill();
+		
 
 
 
