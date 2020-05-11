@@ -1,0 +1,23 @@
+body{
+    background-image: url(Art/Mainmenu-wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#startGame{
+    position: absolute;
+    width: 250pt;
+    height: 30pt;
+    margin-top: 12%;
+}
+#controls{
+    position: absolute;
+    width: 250pt;
+    height: 30pt;
+    margin-top: 15%;
+}
+#theCollection{
+    position: absolute;
+    width: 250pt;
+    height: 30pt;
+    margin-top: 18%;
+}
