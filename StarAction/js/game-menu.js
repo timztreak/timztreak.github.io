@@ -29,22 +29,22 @@ myAudio.onpause = function () {
 };
 
 var start = new Date().getTime(),
-score = '0.1';
+  score = '0.1';
 
-// const interval = window.setInterval(function () {
-//   var time = new Date().getTime() - start;
+const interval = window.setInterval(function () {
+  var time = new Date().getTime() - start;
 
-//   score = Math.round(time / 100);
+  score = Math.round(time / 100);
 
-//   if (score === 100) {
-//     window.clearInterval(interval);
-//     if (!alert("You guys didn't kill each other fast enough!\nPress 'OK' to play again, please kill each other this time")) {
-//       window.location.reload();
-//     }
-//   }
+  if (score === 100) {
+    window.clearInterval(interval);
+    if (!alert("You guys didn't kill each other fast enough!\nPress 'OK' to play again, please kill each other this time")) {
+      window.location.reload();
+    }
+  }
 
-//   document.getElementById('displayScore').innerHTML = score += '.00 Score';
-// });
+  document.getElementById('displayScore').innerHTML = score += '.00 Score';
+});
 
 /*
 NOTE: Causes bugs!

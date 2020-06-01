@@ -187,7 +187,7 @@ function WallCollision() {
 		NotP1.y >= Wall3.y || NotP1.y >= 850) {
 
 		// Player 1 Death
-		window.location = "./death.html";
+		window.location = "./death.html?player=player1";
 	}
 
 	if (NotP2.x <= Wall1.x || NotP2.x >= Wall2.x ||
@@ -195,7 +195,7 @@ function WallCollision() {
 		NotP2.y >= Wall3.y || NotP2.y <= 0) {
 
 		// Player 2 death
-		window.location = "./death.html";
+		window.location = "./death.html?player=player2";
 	}
 
 }
@@ -208,7 +208,7 @@ function NotP2BulletCollided() {
 			NotP2.y + 10) {
 			
 			// Player 2 Death
-			window.location = "./death.html";
+			window.location = "./death.html?player=player2";
 
 		}
 	}
@@ -220,7 +220,7 @@ function NotP1BulletCollided() {
 			10 && NotP2.laserPool[i].y >= NotP1.y && NotP2.laserPool[i].y <=
 			NotP1.y + 10) {
 			// Player 1 Death
-			return window.location = "./death.html";
+			return window.location = "./death.html?player=player1";
 
 		}
 	}

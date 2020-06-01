@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>P2 Dead</title>
+    <title>Player Died</title>
 </head>
 <link rel="stylesheet" href="./css/death.css">
-<body>
+<body onload="load()">
+    <h1 id="playerDeathInfo"></h1>
+
     <button id="newGameButton" onclick="newGame()">New Game</button>
     <button id="mainMenu" onclick="backToMenu()">Back to Main menu </button>
 
