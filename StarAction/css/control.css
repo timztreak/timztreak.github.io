@@ -1,23 +1,31 @@
 body{
-    background-image: url(Art/control-wallpaper.png);
+    background-image: url(../img/control-wallpaper.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
-#p2Info{
+
+.container {
     position: absolute;
-    left: 55%;
-    top: 40%;
-    background-color: grey;
+    top: 44%;
+    left: 32%;
 }
-#p1Info{
-    position: absolute;
-    left: 26%;
-    top: 40%;
+
+.container > div {
+    border: 5px solid white;
+    border-radius: 0.5cm;
     background-color: grey;
+    margin: 0 10px;
+    display: inline-block;
+    padding: 20px;
 }
-#backToMenu{
-    position: absolute;
+
+.container > div > h1 {
+    margin: 0 0 10px 0;
+}
+
+#backToMenu {
+    position: relative;
     width: 250pt;
     height: 35pt;
-    top: 150pt;
+    top: 100pt;
 }

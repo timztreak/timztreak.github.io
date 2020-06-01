@@ -6,7 +6,7 @@ function startGame(){
 
 /*Funktion för att ta sig till information angående kontroler osv */
 function controlInfo(){
-    const controlScene ="../control.html"
+    const controlScene ="./control.html"
     window.location =controlScene;
 }
 
