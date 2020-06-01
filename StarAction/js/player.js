@@ -7,25 +7,26 @@
 //==============================================================================
 // Spelkaraktär iform av ett interstellärt rymdskepp :)
 //==============================================================================
-class Player1
+class Player
 {
 	//==========================================================================
 	// Konstruktor som skapar ett skepp-objekt.
 	//==========================================================================
-	constructor(x, y)
+	constructor(x, y, keyMap, inverted, color, laserColor)
 	{
 		this.x = x;
 		this.y = y;
 		this.laserPool = new Array();
-		this.laserCnt = 0;
-	
+        this.laserCnt = 0;
+        this.keyMap = keyMap;
+        this.inverted = inverted;
+        this.color = color;
 		
 		// Ladda 5 återanvändbara laserskott i en pool
 		for (var i = 0; i < 5; i++)
 		{
-			this.laserPool.push(new LaserShot(30, 5, 4));
+			this.laserPool.push(new LaserShot(30, 5, 4, laserColor, inverted));
 		}
-		
 	}
 
 	//==========================================================================
@@ -35,25 +36,25 @@ class Player1
 		
 		// Agera på tangenttryckningar
 		
-		if (gKeysDown[gKeyCodesP1.LEFT] == true) {
+		if (gKeysDown[this.keyMap.LEFT] == true) {
 
 			// Förflytta skeppet åt vänster
 			this.x = this.x - 2;
 		}
-		else if (gKeysDown[gKeyCodesP1.RIGHT] == true) {
+		else if (gKeysDown[this.keyMap.RIGHT] == true) {
 
 			// Förflytta skeppet åt höger
 			this.x = this.x + 2;
 		}
-		if(gKeysDown[gKeyCodesP1.UP] == true) {
+		if(gKeysDown[this.keyMap.UP] == true) {
 			this.y = this.y - 2;
 		}	
-		else if (gKeysDown[gKeyCodesP1.DOWN]){
+		else if (gKeysDown[this.keyMap.DOWN]){
 			this.y = this.y + 2;
 		}
 		
 		
-		if (gKeysDown[gKeyCodesP1.SHOOT] == true) {
+		if (gKeysDown[this.keyMap.SHOOT] == true) {
 	
 			// Kontrollera om tiden som gått sedan senaste skottet är tillräcklig
 			if (gAppStepCount % 20 == 0) {
@@ -81,11 +82,18 @@ class Player1
 	{
 		// Rita skeppet som en triangel och färglägg den
 		ctx.beginPath();
-		ctx.moveTo(this.x, this.y);	
-		ctx.lineTo(this.x - 10, this.y + 20);
-		ctx.lineTo(this.x + 10, this.y + 20);
+        ctx.moveTo(this.x, this.y);	
+        
+        if(this.inverted) {
+            ctx.lineTo(this.x + 10, this.y - 20);
+            ctx.lineTo(this.x - 10, this.y - 20);
+        } else {
+		    ctx.lineTo(this.x - 10, this.y + 20);
+		    ctx.lineTo(this.x + 10, this.y + 20);
+        }
+
 		ctx.closePath();
-		ctx.fillStyle = "#700000";
+		ctx.fillStyle = this.color;
 		ctx.fill();
 		
 
@@ -97,4 +105,3 @@ class Player1
 		}
 	}
 }
-

@@ -1,53 +1,46 @@
 body{
     position: absolute;
-    background-image: url("Images/bodyBackground.jpg");
+    background-image: url("../img/gamescene-wallpaper.png");
     background-size: cover;
-}
-#backToStart{
-    background-color:cyan;
-    position: absolute;
-    width: 7%;
-    height: auto;
-    font-size: 125%;
-}
-#musicButton{
-    background-color: cyan;
-    position: absolute;
-    width: 7%;
-    height: auto;
-    margin-left: 14%;
-    font-size: 125%;
+    background-repeat: no-repeat;
 }
 
-#restartGame{
-    background-color: cyan;
+.container {
     position: absolute;
-    width: 7%;
-    height: auto;
-    margin-left: 7%;
-    font-size: 125%;
+    top: 100pt;
 }
-#musicButton:hover{
-    background-color: black;
-    opacity: 0.85;
-    color: white;
+
+.container > button {
+    width: 250pt;
+    height: 35pt;
+    margin:20px 0 ;
+    display: block;
 }
-#backToStart:hover{
-    background-color: black;
-    opacity: 0.85;
-    color: white;
+.container > button:first-child {
+    margin-top: 0;
 }
-#restartGame:hover{
-    background-color: black;
-    opacity: 0.85;
-    color: white;
-}
-#p2Info{
+
+#myCanvas{
     position: absolute;
-    background-color: grey;
+    top: 3em;
+    width: 600px;
+    height: 850px;
+    border:5px solid white;
+    left: 450pt;  
 }
-#p1Info{
-    position: relative;
-    
-    background-color: grey;
+
+#gameMusicControler{
+    position: fixed;
+    width: 25em;
+    height: 2em;
+    bottom: 1.5em;
+}
+
+#displayScore{
+    color: white;
+    position: absolute;
+    width: max-content;
+    font-family: Unispace;
+    font-size: 2em;
+    left: 450pt;
 }

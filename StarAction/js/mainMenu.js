@@ -1,6 +1,6 @@
 /*Funktion för att starta spelet*/
 function startGame(){
-    const gameScene = "../Gamescene/index.html";
+    const gameScene = "./game.html";
     window.location = gameScene;
 }
 
@@ -12,7 +12,7 @@ function controlInfo(){
 
 /*Funktion för att ta sig till The Collection, som innehåller alla programmeringsuppgifter osv */
 function goBackToMenu(){
-    const theCollection ="../../index.html"
+    const theCollection ="../index.html"
     window.location = theCollection;
 }
 
