@@ -1,10 +1,7 @@
-#musicButton{
-    background-color: cyan;
+body{
     position: absolute;
-    width: 7%;
-    height: auto;
-    margin-left: 14%;
-    font-size: 125%;
+    background-image: url("Images/bodyBackground.jpg");
+    background-size: cover;
 }
 #backToStart{
     background-color:cyan;
@@ -13,6 +10,15 @@
     height: auto;
     font-size: 125%;
 }
+#musicButton{
+    background-color: cyan;
+    position: absolute;
+    width: 7%;
+    height: auto;
+    margin-left: 14%;
+    font-size: 125%;
+}
+
 #restartGame{
     background-color: cyan;
     position: absolute;
@@ -44,9 +50,4 @@
     position: relative;
     
     background-color: grey;
-}
-body{
-    position: absolute;
-    background-image: url("Images/bodyBackground.jpg");
-    background-size: cover;
 }
