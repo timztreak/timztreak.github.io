@@ -1,0 +1,20 @@
+body{
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#newGameButton{
+   position: absolute;
+   width: 250pt;
+   height: 30pt;
+   left: 42%;
+   margin-top: 15%;
+}
+
+#mainMenu{
+   position: absolute;
+   width: 250pt;
+   height: 30pt;
+   left: 42%;
+   margin-top: 18%;
+}
