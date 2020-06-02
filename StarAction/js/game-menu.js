@@ -47,7 +47,7 @@ const interval = window.setInterval(function () {
 });
 
 /*
-NOTE: Causes bugs!
+NOTE: Causes bugs because there is no element with the id "myRange"
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("myAudio");
