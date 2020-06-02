@@ -1,3 +1,5 @@
+@import "./main.scss";
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:500);
 
 $primary-color: #2ecc71;
@@ -70,18 +72,18 @@ a:hover {
 	top: 80px;
 }
 
-i.fa-volume-up {
-  right: 0;
-}
-
-i.fa-volume-down {
-  left: -13px;
-}
-
-i {
+.player > #player-icon-up, #player-icon-down {
   position: absolute;
   margin-top: -6px;
   color: #666;
+}
+
+#player-icon-up {
+  right: 0;
+}
+
+#player-icon-down {
+  left: -20px;
 }
 
 #volume {
